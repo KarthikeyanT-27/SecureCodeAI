@@ -109,8 +109,8 @@ SecureCode-AI/
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/your-username/securecode-ai.git
-cd securecode-ai
+git clone https://github.com/KarthikeyanT-27/SecureCodeAI.git
+cd SecureCodeAI
 ````
 
 ### 2️⃣ Install Dependencies
