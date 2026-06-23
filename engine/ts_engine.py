@@ -16,7 +16,7 @@ regex matching.
 import re
 from typing import List, Optional
 
-from tree_sitter_languages import get_parser
+from tree_sitter_language_pack import get_parser
 
 from .models import Finding
 from .rules import (
