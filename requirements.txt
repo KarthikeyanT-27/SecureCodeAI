@@ -3,3 +3,11 @@ fastapi
 uvicorn[standard]
 pydantic
 requests
+python-multipart
+
+# Structural multi-language parsing for the taint-analysis engine.
+# IMPORTANT: tree-sitter must stay pinned to 0.21.3 - tree-sitter-languages'
+# bundled grammars are compiled against the pre-0.22 Language() API and break
+# with newer tree-sitter releases (constructor signature changed).
+tree-sitter==0.21.3
+tree-sitter-languages==1.10.2

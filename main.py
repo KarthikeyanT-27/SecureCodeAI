@@ -11,7 +11,7 @@ app = FastAPI(title="SecureCode AI – Unified Security Backend")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://localhost:8501"],  # tighten this to your real frontend origin(s) in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

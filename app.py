@@ -199,11 +199,14 @@ if st.session_state.scanned:
         for file, vulns in grouped.items():
             with st.expander(f"🚨 {file} ({len(vulns)})", expanded=True):
                 for v in vulns:
+                    conf = v.get("confidence", "Medium")
+                    cwe = v.get("cwe", "")
                     st.markdown(f"""
 **{v['vuln_type']}**  
-📍 **Line:** `{v['line']}`  
-🔥 **Severity:** `{v['severity']}` | 🎯 **Score:** `{v['score']}`
+📍 **Line:** `{v['line']}` &nbsp;|&nbsp; 🔥 **Severity:** `{v['severity']}` &nbsp;|&nbsp; 🎯 **Score:** `{v['score']}` &nbsp;|&nbsp; 🧩 **{cwe}** &nbsp;|&nbsp; 🤖 **Confidence:** `{conf}`
 """)
+                    if v.get("code_snippet"):
+                        st.code(v["code_snippet"], language=None)
                     st.info(v.get("explanation", ""))
                     st.success(v.get("recommendation", ""))
                     st.divider()
